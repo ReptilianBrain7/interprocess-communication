@@ -1,6 +1,6 @@
 # interprocess-communication
 
-This is a program that demonstrates the basics of Inter-Process Communication (IPC) using shared memory, message queues, and semaphores. The purpose of this program is to help the author better understand how IPC works and improve their coding skills. 
+This is a program that demonstrates the basics of Inter-Process Communication (IPC) using shared memory, message queues, and semaphores. The purpose of this program is to help the author better understand how IPC works and improve their coding skills.
 
 This program has been "forked" from an Assignment about IPC from the course "System Level Programming" at TU Graz and most of the code has been written by the author themselves. However, some small parts have been adapted or copied over from the Assignment Framework.
 
