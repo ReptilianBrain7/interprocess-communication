@@ -1,3 +1,5 @@
+# Makefile has been copied over from the Assignemnt Framework and slightly adapted
+
 PROJECT_ROOT = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 CC :=gcc

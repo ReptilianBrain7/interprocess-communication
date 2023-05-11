@@ -2,7 +2,7 @@
 
 char *dispatcher(shm *shared_memory);
 
-// This char array has been copied over from the Assginemt Framework
+// This char array called "predefines" has been copied over from the Assginemt Framework
 char* predefines[] = {                          //     motivated answer        unmotivated answer
         "Do I love programming?\n",           //0    "Oh yes!\n"     (12)    "Maybe.\n"      (9)
         "Should I drink some beer?\n",        //1    "Maybe.\n"      (9)     "Definitely!\n" (11)

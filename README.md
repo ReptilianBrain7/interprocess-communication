@@ -6,7 +6,7 @@ This program has been "forked" from an Assignment about IPC from the course "Sys
 
 This program provides a simple example of how multiple processes can communicate with each other using shared memory, message queues, and semaphores. It includes a client and a server process that can send and receive messages through shared memory and message queues, as well as synchronize access to shared resources using semaphores.
 
-This program is intended for educational purposes only and should not be used for production or mission-critical applications. <br \>
+This program is intended for educational purposes only and should not be used for production or mission-critical applications.
 
 ## Getting Started
 
