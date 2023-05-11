@@ -14,14 +14,14 @@ To compile and run this program, follow these steps:
 
 1. Clone this repository to your local machine.
 2. Open a terminal window and navigate to the cloned repository.
-3. Run "make all" to build the program.
-4. Run "make run" to run the program.
+3. Run `make all` to build the program.
+4. Run `make run` to run the program.
 5. Follow the prompts to send and receive messages between the client and server.
 
 ## Acknowledgements
 
-This program was developed by ReptilianBrain7 for an IPC Assignment. Some portions of the code have been adapted or copied over from the Assignment Framework. <br \>
+This program was developed by ReptilianBrain7 for an IPC Assignment. Some portions of the code have been adapted or copied over from the Assignment Framework.
 
 ## License
 
-This program is licensed under the MIT License - see the LICENSE file for details.
+This program is licensed under the MIT License - see the **LICENSE** file for details.
