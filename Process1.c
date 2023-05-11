@@ -29,13 +29,18 @@ int main(int argc, char* argv[])
 
   do
   {
+    printf("Process1 ready for some action.\n");
     getCommand(buffer);
     strcpy(shared_memory->buf, buffer);
     printf("Here, buddy. I wrote you something.\n");
     sem_post(&shared_memory->sem1_);
     sem_wait(&shared_memory->sem2_);
+
+    fflush(stdin);
     
   } while (strcmp(buffer, "bye\n") != 0);
+
+  printf("Process1 is done\n");
 
   sem_destroy(&shared_memory->sem1_);
   sem_destroy(&shared_memory->sem2_);

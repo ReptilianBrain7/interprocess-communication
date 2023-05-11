@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "mman.h": "c",
+    "system_error": "c"
+  }
+}
