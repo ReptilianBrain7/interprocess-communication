@@ -38,10 +38,10 @@ int main(int argc, char* argv[])
       printf("%c", request[i]);
     }
 
-    printf("Btw, there is a number stored in the shared quantum space. I will overwrite it.\n");
-    int num = 1;
-    shared_memory->number_ = num;
-    printf("Overwriting sucessfull\n");
+    printf("Btw, there is a number stored in the shared quantum space.\n");
+    // int num = 1;
+    // shared_memory->number_ = num;
+    // printf("Overwriting sucessfull\n");
     printf("This is the number: %d\n", shared_memory->number_);
     printf("Printing number successfull (or not?). I will now venture into the quantum space of dispatcher.\n");
     strcpy(response, dispatcher(shared_memory));
@@ -77,11 +77,15 @@ char *dispatcher(shm *shared_memory)
   printf("This is the motvational number: %d\n", shared_memory->number_);
 
   if (strcmp(shared_memory->buf, predefines[7]) == 0) {
-    shared_memory->number_ = 1;
-    return NULL;
+    int num = 1;
+    shared_memory->number_ = num;
+    return predefines[13];
   } else if (strcmp(shared_memory->buf, predefines[8]) == 0) {
-    shared_memory->number_ = 0;
-    return NULL;
+    int num = 0;
+    printf("This is the old number: %d\n", shared_memory->number_);
+    shared_memory->number_ = num;
+    printf("This is the new number: %d\n", shared_memory->number_);
+    return predefines[13];
   }
 
   printf("I couldn't get into the sub-space of motivational interference. Over.\n");

@@ -30,7 +30,9 @@ int main(int argc, char* argv[])
   do
   {
     printf("Process1 ready for some action.\n");
-    getCommand(buffer);
+    int control = getCommand(buffer);
+    if (control == 0)
+      strcpy(buffer, "bye\n");
     strcpy(shared_memory->buf, buffer);
     printf("Here, buddy. I wrote you something.\n");
     sem_post(&shared_memory->sem1_);
