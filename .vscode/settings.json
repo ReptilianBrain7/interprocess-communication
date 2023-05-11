@@ -2,5 +2,10 @@
   "files.associations": {
     "mman.h": "c",
     "system_error": "c"
+  },
+  "editor.defaultFormatter": null,
+  "editor.formatOnSave": false,
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
   }
 }

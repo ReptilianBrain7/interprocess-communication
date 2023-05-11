@@ -2,16 +2,18 @@
 
 char buffer[BUF_SIZE];
 
-int getCommand(char *buffer) {
+int getCommand(char *buffer)
+{
   memset(buffer, 0, BUF_SIZE * sizeof(char));
-  if (fgets(buffer, BUF_SIZE * sizeof(char), stdin) != NULL) {
+  if (fgets(buffer, BUF_SIZE * sizeof(char), stdin) != NULL)
+  {
     return 1;
   }
   else
     return 0;
 }
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
   int fd = shm_open("/test", O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
   ftruncate(fd, sizeof(shm));
@@ -23,7 +25,7 @@ int main(int argc, char* argv[])
   process_id = fork();
   if (process_id == 0)
   {
-    char* arg_list[] = {"Process2", NULL};
+    char *arg_list[] = {"Process2", NULL};
     execv("Process2", arg_list);
   }
 
@@ -39,7 +41,7 @@ int main(int argc, char* argv[])
     sem_wait(&shared_memory->sem2_);
 
     fflush(stdin);
-    
+
   } while (strcmp(buffer, "bye\n") != 0);
 
   printf("Process1 is done\n");

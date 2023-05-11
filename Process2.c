@@ -23,7 +23,7 @@ char* predefines[] = {                          //     motivated answer        u
 char request[BUF_SIZE];
 char response[BUF_SIZE];
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
   int fd = shm_open("/test", O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
   shm *shared_memory = mmap(NULL, sizeof(shm), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
@@ -33,8 +33,8 @@ int main(int argc, char* argv[])
     sem_wait(&shared_memory->sem1_);
     strcpy(request, shared_memory->buf);
     printf("Hey pal, got your message. I will read it out loud.\n");
-    
-    for(int i = 0; i < sizeof(request); i++)
+
+    for (int i = 0; i < sizeof(request); i++)
     {
       printf("%c", request[i]);
     }
@@ -60,7 +60,6 @@ int main(int argc, char* argv[])
   shm_unlink("/test");
 }
 
-
 char *dispatcher(shm *shared_memory)
 {
   // TODO Student START
@@ -69,19 +68,22 @@ char *dispatcher(shm *shared_memory)
   printf("I'm in the quantum space of the dispatcher. Over.\n");
 
   printf("This is your message. I will read it out loud.\n");
-    
-  for(int i = 0; i < sizeof(request); i++)
+
+  for (int i = 0; i < sizeof(request); i++)
   {
     printf("%c", shared_memory->buf[i]);
   }
 
   printf("This is the motvational number: %d\n", shared_memory->number_);
 
-  if (strcmp(shared_memory->buf, predefines[7]) == 0) {
+  if (strcmp(shared_memory->buf, predefines[7]) == 0)
+  {
     int num = 1;
     shared_memory->number_ = num;
     return predefines[13];
-  } else if (strcmp(shared_memory->buf, predefines[8]) == 0) {
+  }
+  else if (strcmp(shared_memory->buf, predefines[8]) == 0)
+  {
     int num = 0;
     printf("This is the old number: %d\n", shared_memory->number_);
     shared_memory->number_ = num;
@@ -93,13 +95,14 @@ char *dispatcher(shm *shared_memory)
 
   if (strcmp(shared_memory->buf, predefines[6]) == 0)
     return predefines[6];
-  
+
   printf("Also couldn't get into the sub-space of Sayonara. Over.\n");
 
   // PROCESS STOPS HERE. WHY?
   // IT WORKS AGAIN. HAD TO GIVE EVERY SHARED MEMORY READ/WRITE PERMISSON
 
-  if (shared_memory->number_ == 1) {
+  if (shared_memory->number_ == 1)
+  {
 
     printf("Entered the imaginary space of decisions. Over.\n");
 
@@ -115,8 +118,9 @@ char *dispatcher(shm *shared_memory)
       return (predefines[10]);
     else if (strcmp(shared_memory->buf, predefines[5]) == 0)
       return predefines[10];
-
-  } else if (shared_memory->number_ == 0) {
+  }
+  else if (shared_memory->number_ == 0)
+  {
 
     printf("Attention. Motivation plummeted in the imaginary space. Over.\n");
 
@@ -132,7 +136,7 @@ char *dispatcher(shm *shared_memory)
       return (predefines[12]);
     else if (strcmp(shared_memory->buf, predefines[5]) == 0)
       return predefines[10];
-  } 
+  }
 
   printf("Mission failed. Gonna return with nothing. Exit with 'I don't understand'. Over.\n");
 
